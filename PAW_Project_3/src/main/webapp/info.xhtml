@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main-template.xhtml">
+
+    <ui:define name="title">
+        Kalkulator BJU - Informacje
+    </ui:define>
+
+    <ui:define name="content">
+        <p:panel styleClass="bottom-space">
+            <h:graphicImage name="img/java.png" library="template" />
+            <p>Ten kalkulator służy do obliczania dziennego zapotrzebowania na białka, tłuszcze i węglowodany (BJU) na podstawie Twojej wagi, wzrostu, wieku, płci oraz poziomu aktywności fizycznej.</p>
+            
+            <h3>Jak działa kalkulator?</h3>
+            <ul>
+                <li><strong>Białko:</strong> Odpowiedzialne za budowę i regenerację mięśni oraz tkanek. Zazwyczaj stanowi 25% dziennego zapotrzebowania kalorycznego.</li>
+                <li><strong>Tłuszcze:</strong> Są kluczowe dla prawidłowego funkcjonowania organizmu, w tym dla produkcji hormonów. Zajmują około 30% dziennego zapotrzebowania kalorycznego.</li>
+                <li><strong>Węglowodany:</strong> Główne źródło energii. Powinny stanowić około 45% dziennego spożycia kalorii.</li>
+            </ul>
+
+            <h3>Obliczanie dziennego zapotrzebowania kalorycznego</h3>
+            <p>Kalkulator wykorzystuje <strong>wzór Harrisa-Benedicta</strong> do obliczenia podstawowej przemiany materii (BMR), a następnie modyfikuje wynik w zależności od poziomu Twojej aktywności fizycznej.</p>
+
+            <p><strong>Wzór dla mężczyzn:</strong></p>
+            <p>BMR = 88.362 + (13.397 × waga w kg) + (4.799 × wzrost w cm) - (5.677 × wiek w latach)</p>
+
+            <p><strong>Wzór dla kobiet:</strong></p>
+            <p>BMR = 447.593 + (9.247 × waga w kg) + (3.098 × wzrost w cm) - (4.330 × wiek w latach)</p>
+
+            <h3>Poziomy aktywności fizycznej:</h3>
+            <ul>
+                <li><strong>Niski:</strong> Siedzący tryb życia, minimalna aktywność fizyczna (BMR × 1.2)</li>
+                <li><strong>Średni:</strong> Regularne ćwiczenia 3-5 razy w tygodniu (BMR × 1.55)</li>
+                <li><strong>Wysoki:</strong> Codzienne intensywne ćwiczenia lub fizyczna praca (BMR × 1.9)</li>
+            </ul>
+
+            <h3>Dlaczego warto znać swoje zapotrzebowanie na BJU?</h3>
+            <p>Zrozumienie dziennego zapotrzebowania na białka, tłuszcze i węglowodany pomoże Ci lepiej kontrolować swoją dietę, wspierać cele zdrowotne, takie jak utrata wagi, budowanie masy mięśniowej lub utrzymanie zdrowej sylwetki.</p>
+
+            <h:form>
+                <h:commandLink value="Strona główna" action="index" />
+            </h:form>
+        </p:panel>
+    </ui:define>
+
+</ui:composition>
+</html>

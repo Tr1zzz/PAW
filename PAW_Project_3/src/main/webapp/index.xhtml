@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/page-template.xhtml">
+
+    <ui:define name="pageContent">
+        
+        <p:panel header="Kalkulator BJU" styleClass="bottom-space">
+            
+            <p:messages id="msg" />
+
+            <h:form>
+                <h:panelGrid columns="2" cellpadding="5" styleClass="bottom-space">
+                    
+                    <p:outputLabel for="height" value="Wzrost (cm):" />
+                    <p:inputText id="height" value="#{calcBjuBB.height}" 
+                                 required="true" validatorMessage="Proszę podać wzrost"
+                                 type="number" placeholder="np. 170"/>
+
+                    <p:outputLabel for="weight" value="Waga (kg):" />
+                    <p:inputText id="weight" value="#{calcBjuBB.weight}" 
+                                 required="true" validatorMessage="Proszę podać wagę" 
+                                 type="number" placeholder="np. 70"/>
+
+                    <p:outputLabel for="age" value="Wiek:" />
+                    <p:inputText id="age" value="#{calcBjuBB.age}" 
+                                 required="true" validatorMessage="Proszę podać wiek" 
+                                 type="number" placeholder="np. 30"/>
+
+                    <p:outputLabel for="gender" value="Płeć:" />
+                    <p:selectOneMenu id="gender" value="#{calcBjuBB.gender}">
+                        <f:selectItem itemValue="male" itemLabel="Mężczyzna" />
+                        <f:selectItem itemValue="female" itemLabel="Kobieta" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel for="activityLevel" value="Poziom aktywności:" />
+                    <p:selectOneMenu id="activityLevel" value="#{calcBjuBB.activityLevel}">
+                        <f:selectItem itemValue="low" itemLabel="Niski" />
+                        <f:selectItem itemValue="medium" itemLabel="Średni" />
+                        <f:selectItem itemValue="high" itemLabel="Wysoki" />
+                    </p:selectOneMenu>
+
+                </h:panelGrid>
+
+                <p:commandButton value="Oblicz" action="#{calcBjuBB.calc}" update="msg" styleClass="custom-button" />
+                <p:commandLink value="Informacje" action="#{calcBjuBB.info}" styleClass="top-space" />
+            </h:form>
+        </p:panel>
+    </ui:define>
+
+</ui:composition>
+</html>
