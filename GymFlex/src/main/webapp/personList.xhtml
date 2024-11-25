@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+    <h:head>
+        <meta charset="utf-8" />
+        <title>Список сервисов</title>
+    </h:head>
+    <h:body style="background-color: #eee; margin: 0.5em;">
+
+        <p:panel header="Параметры поиска" toggleable="true" collapsed="true"
+                 style="margin-bottom: 1em;">
+            <h:form>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel value="Название:" />
+                    <p:inputText value="#{serviceListBB.name}" />
+                    <p:commandButton value="Поиск" update="form-table" />
+                </h:panelGrid>
+            </h:form>
+        </p:panel>
+
+        <p:messages />
+
+        <h:form id="form-table" style="margin-bottom:1em;">
+
+            <p:commandButton value="Добавить новый сервис" style="margin-bottom:1em;" 
+                             action="#{serviceListBB.newService()}"/>
+
+            <p:dataTable value="#{serviceListBB.list}" var="s" id="serviceTable" paginator="true" rows="10">
+
+                <p:column headerText="ID">
+                    <h:outputText value="#{s.idService}" />
+                </p:column>
+
+                <p:column headerText="Название" sortable="true">
+                    <h:outputText value="#{s.name}" />
+                </p:column>
+
+                <p:column headerText="Время" sortable="true">
+                    <h:outputText value="#{s.time}">
+                        <f:convertDateTime pattern="dd-MM-yyyy HH:mm:ss" />
+                    </h:outputText>
+                </p:column>
+
+                <p:column headerText="Опции">
+
+                    <p:commandButton value="Редактировать" style="margin-right: 0.5em"
+                                     action="#{serviceListBB.editService(s)}"/>
+
+                    <p:commandButton value="Удалить" style="margin-right: 0.5em"
+                                     action="#{serviceListBB.deleteService(s)}"
+                                     update="@form" />
+
+                    <p:button outcome="serviceEditGET" value="Редактировать (GET)">
+                        <f:param name="s" value="#{s.idService}" />
+                    </p:button>
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>

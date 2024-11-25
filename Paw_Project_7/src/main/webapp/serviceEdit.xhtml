@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+    <f:metadata>
+        <f:viewAction action="#{serviceEditBB.onLoad()}" />
+    </f:metadata>
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <title>Edit Service</title>
+    </h:head>
+
+    <h:body style="background-color: #eee; margin: 0.5em;">
+
+        <p:panel toggleable="true" header="Edit Service">
+
+            <h:form rendered="#{serviceEditBB.service != null}">
+                <h:panelGrid columns="3" cellpadding="5">
+
+                    <h:outputLabel for="s-name" value="Name:" />
+                    <p:inputText id="s-name" value="#{serviceEditBB.service.name}"
+                                 required="true" requiredMessage="Please enter a name"
+                                 validatorMessage="Maximum 200 characters">
+                        <f:validateLength maximum="200" />
+                    </p:inputText>
+                    <p:message for="s-name" display="icon"/>
+
+                    <h:outputLabel for="s-time" value="Time:" />
+                    <p:inputText id="s-time" value="#{serviceEditBB.service.time}"
+                                 required="true" requiredMessage="Please enter a time"
+                                 converterMessage="Invalid date format (e.g., 15-07-2018)">
+                        <f:convertDateTime pattern="dd-MM-yyyy"/>
+                    </p:inputText>
+                    <p:message for="s-time" display="icon"/>
+
+                </h:panelGrid>
+
+                <p:messages id="msgs" />
+
+              <p:commandButton value="Save" 
+                 action="#{serviceEditGETBB.saveData()}" 
+                 style="margin-right: 1em;" 
+                 update="@form"/>
+
+                <p:button value="Cancel" outcome="serviceList" />
+            </h:form>
+
+        </p:panel>
+
+    </h:body>
+
+</html>
