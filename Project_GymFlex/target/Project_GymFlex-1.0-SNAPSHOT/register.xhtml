@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/WEB-INF/template/layout.xhtml">
+    <ui:define name="content">
+        <h2>Zarejestruj się</h2>
+        <p>Utwórz swoje konto, aby dołączyć do naszej społeczności i korzystać z pełni możliwości GymFlex.</p>
+
+        <div class="panel fade-in" style="max-width:300px;margin:auto;">
+            <img src="#{request.contextPath}/resources/images/gym-register.jpg" alt="Register" style="margin-bottom:20px;"/>
+            <h:form>
+                <div style="margin-bottom:10px;">
+                    <label for="email" style="display:block;margin-bottom:5px;">Email</label>
+                    <input id="email" type="email" placeholder="Wpisz swój email"/>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="username" style="display:block;margin-bottom:5px;">Nazwa użytkownika</label>
+                    <input id="username" type="text" placeholder="Wpisz nazwę użytkownika"/>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label for="password" style="display:block;margin-bottom:5px;">Hasło</label>
+                    <input id="password" type="password" placeholder="Wpisz hasło"/>
+                </div>
+                <input type="submit" value="Zarejestruj" />
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

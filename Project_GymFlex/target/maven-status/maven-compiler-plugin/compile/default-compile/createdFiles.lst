@@ -1,0 +1,8 @@
+com\jsfcourse\entities\Type.class
+com\jsfcourse\entities\Service.class
+com\jsfcourse\service\ServiceEditBB.class
+com\jsfcourse\entities\Account.class
+com\jsfcourse\service\ServiceListBB.class
+com\jsfcourse\entities\Memberships.class
+com\jsfcourse\dao\ServiceDAO.class
+com\jsfcourse\service\ServiceEditGETBB.class

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/template/layout.xhtml">
+    <ui:define name="content">
+        <h1>Zarejestruj się</h1>
+        <h:form>
+            <p:panel header="Formularz rejestracyjny" style="max-width:400px;">
+                <!-- Удален autoUpdate -->
+                <p:messages id="msgs" closable="true"/>
+                
+                <div style="margin-bottom:10px;">
+                    <p:inputText id="email" value="#{registerBean.email}" placeholder="Email" style="width:100%;"/>
+                </div>
+                
+                <div style="margin-bottom:10px;">
+                    <p:inputText id="username" value="#{registerBean.username}" placeholder="Nazwa użytkownika" style="width:100%;"/>
+                </div>
+                
+                <div style="margin-bottom:10px;">
+                    <p:password id="password" value="#{registerBean.password}" placeholder="Hasło" style="width:100%;"/>
+                </div>
+                
+                <!-- Добавили update="@form" для обновления сообщений -->
+                <p:commandButton value="Zarejestruj" action="#{registerBean.register}" icon="pi pi-user-plus" styleClass="ui-button-success" update="@form"/>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/WEB-INF/template/layout.xhtml">
+    <ui:define name="content">
+        <h2>Witaj w GymFlex!</h2>
+        <p>GymFlex to nowoczesna siłownia oferująca szeroki wybór sprzętu, zajęć grupowych oraz wsparcia profesjonalnych trenerów.</p>
+        <p>Dołącz do nas i osiągnij swoje sportowe cele w komfortowych warunkach.</p>
+
+        <!-- Блок: Profesjonalny Sprzęt -->
+        <div class="glass-panel">
+            <h3>Profesjonalny Sprzęt</h3>
+            <p>Najwyższej jakości maszyny do treningu siłowego</p>
+            <!-- Карусель изображений -->
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000">
+    <p:panel>
+        <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+    <p:panel>
+        <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+    <p:panel>
+        <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+</p:carousel>
+        </div>
+
+        <!-- Блок: Strefa Cardio -->
+        <div class="glass-panel">
+            <h3>Strefa Cardio</h3>
+            <p>Bieżnie, rowerki i steppery z nowoczesnym oprogramowaniem</p>
+           <p:carousel numVisible="1" circular="true" autoplayInterval="3000">
+    <p:panel>
+        <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+    <p:panel>
+        <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+    <p:panel>
+        <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+</p:carousel>
+        </div>
+
+        <!-- Блок: Zajęcia Grupowe -->
+        <div class="glass-panel">
+            <h3>Zajęcia Grupowe</h3>
+            <p>Fitness, joga, crossfit – dla każdego coś interesującego</p>
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000">
+    <p:panel>
+        <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+    <p:panel>
+        <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+    <p:panel>
+        <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+    </p:panel>
+</p:carousel>
+        </div>
+
+        <h3 style="color:#00f2ff; margin-top:40px;">Godziny Otwarcia</h3>
+        <table style="width:300px; border-collapse: collapse;">
+            <tr>
+                <th style="color:#00f2ff; border:2px solid #00f2ff; padding:8px;">Dzień</th>
+                <th style="color:#00f2ff; border:2px solid #00f2ff; padding:8px;">Godziny</th>
+            </tr>
+            <tr>
+                <td style="border:2px solid #00f2ff; padding:8px;">Pon-Czw</td>
+                <td style="border:2px solid #00f2ff; padding:8px;">9:30 - 21:00</td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #00f2ff; padding:8px;">Pt</td>
+                <td style="border:2px solid #00f2ff; padding:8px;">6:00 - 21:00</td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #00f2ff; padding:8px;">Sob</td>
+                <td style="border:2px solid #00f2ff; padding:8px;">10:00 - 15:00</td>
+            </tr>
+        </table>
+    </ui:define>
+</ui:composition>
+</html>

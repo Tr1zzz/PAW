@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/WEB-INF/template/layout.xhtml">
+    <ui:define name="content">
+        <h2>Karnety</h2>
+        <p>Wybierz karnet, który najlepiej odpowiada Twoim potrzebom, i trenuj zgodnie z własnym harmonogramem.</p>
+
+        <div class="glass-panel">
+            <h3>Karnet Standard</h3>
+            <p>Podstawowy dostęp do stref siłowych i cardio.</p>
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000" styleClass="p-mt-3">
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+            </p:carousel>
+        </div>
+
+        <div class="glass-panel">
+            <h3>Karnet Premium</h3>
+            <p>Nielimitowany dostęp do wszystkich stref, zajęć grupowych i konsultacji z trenerem personalnym.</p>
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000" styleClass="p-mt-3">
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+            </p:carousel>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <title>GymFlex</title>
+    <h:outputStylesheet name="https://cdn.jsdelivr.net/npm/primeflex@3.2.1/primeflex.min.css"/>
+    <h:outputStylesheet name="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</h:head>
+
+<h:body style="margin:0; padding:0; background:#0A1F44; font-family:Arial,sans-serif; color:#ffffff;">
+
+    <header class="p-py-2 p-px-3" style="background:#0A1F44;">
+        <p:toolbar style="border:none; background:none;">
+            <!-- Левая часть (Лого) -->
+            <p:toolbarGroup align="left">
+                <h1 style="color:#ffffff; font-size:24px; margin:0;">GymFlex</h1>
+            </p:toolbarGroup>
+            
+            <p:toolbarGroup styleClass="p-d-flex p-jc-center p-flex-1 p-ai-center">
+                <p:menubar style="background:none;border:none;">
+                    <p:menuitem value="Strona Główna" outcome="/index" icon="pi pi-home" style="color:#ffffff;" />
+                    <p:submenu icon="pi pi-bars" style="color:#ffffff;">
+                        <p:menuitem value="Karnet" outcome="/karnet" icon="pi pi-ticket"/>
+                        <p:menuitem value="Zajęcia" outcome="/zajecia" icon="pi pi-calendar"/>
+                        <p:menuitem value="Trenerzy" outcome="/trenerzy" icon="pi pi-users"/>
+                    </p:submenu>
+                </p:menubar>
+            </p:toolbarGroup>
+
+            <p:toolbarGroup align="right" styleClass="p-d-flex p-ai-center" style="gap:10px;">
+                <p:button value="Zaloguj" outcome="/login" styleClass="p-button-text p-text-white p-button-sm"/>
+                <p:button value="Rejestracja" outcome="/register" styleClass="p-button-text p-text-white p-button-sm"/>
+            </p:toolbarGroup>
+        </p:toolbar>
+    </header>
+
+    <main class="p-mt-4 p-px-3" style="max-width:1200px; margin:auto;">
+        <ui:insert name="content">
+        </ui:insert>
+    </main>
+
+    
+    <p:growl id="growl" showDetail="true" life="5000"/>
+</h:body>
+</html>

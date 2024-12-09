@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/WEB-INF/template/layout.xhtml">
+    <ui:define name="content">
+        <h2>Zajęcia</h2>
+        <p>Odkryj różnorodność naszych zajęć grupowych: od fitnessu i jogi, po intensywne treningi crossfit.</p>
+
+        <div class="glass-panel">
+            <h3>Fitness</h3>
+            <p>Spalanie kalorii i poprawa wytrzymałości w rytm energicznej muzyki.</p>
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000" styleClass="p-mt-3">
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+            </p:carousel>
+        </div>
+
+        <div class="glass-panel">
+            <h3>Joga</h3>
+            <p>Relaks, rozciąganie i poprawa elastyczności ciała, połączone z wyciszeniem umysłu.</p>
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000" styleClass="p-mt-3">
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+            </p:carousel>
+        </div>
+
+        <div class="glass-panel">
+            <h3>CrossFit</h3>
+            <p>Intensywne treningi funkcjonalne, budujące siłę, wytrzymałość i charakter.</p>
+            <p:carousel numVisible="1" circular="true" autoplayInterval="3000" styleClass="p-mt-3">
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment1.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment2.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+                <p:panel>
+                    <h:graphicImage library="images" name="equipment3.jpg" alt="Equipment" style="max-height:200px;"/>
+                </p:panel>
+            </p:carousel>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>
